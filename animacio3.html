@@ -1,0 +1,67 @@
+<html>
+   
+   <head>
+      <title>Rollover with a Mouse Events</title>
+      
+      <script type = "text/javascript">
+         <!--
+            if(document.images) {
+               var image1 = new Image();     // Preload an image
+               image1.src = "nyitott.jpg";
+               var image2 = new Image();     // Preload second image
+               image2.src = "zart.jpg";
+            }
+         //-->
+      </script>
+            <script type = "text/javascript">
+         
+                var imgObj = null;
+                
+                function init() {
+                   imgObj = document.getElementById('myImage');
+                   imgObj.style.position= 'relative'; 
+                   imgObj.style.left = '0px'; 
+                }
+                function moveRight() {
+                   imgObj.style.left = parseInt(imgObj.style.left) + 10 + 'px';
+                }
+                
+                window.onload = init;
+             
+          </script>
+                <script type = "text/javascript">
+             
+                   var imgObj = null;
+                   
+                   function init() {
+                      imgObj = document.getElementById('myImage');
+                      imgObj.style.position= 'relative'; 
+                      imgObj.style.left = '0px'; 
+                   }
+                   function moveLeft() {
+                      imgObj.style.left = parseInt(imgObj.style.left) - 10 + 'px';
+                   }
+                   
+                   window.onload = init;
+                
+             </script>
+       </head>
+       
+       <body>   
+          <form>
+             <img style="height: 200;" id = "myImage" src = "nyitott.jpg" />
+            <br>
+             <input type = "button" value = "Balra" onclick = "moveLeft();" />
+             <input type = "button" value = "Jobbra" onclick = "moveRight();" />
+          </form>
+         
+   </head>
+   
+   <body>
+      
+      <a href = "#" onMouseOver = "document.myImage.src = image2.src;"
+         onMouseOut = "document.myImage.src = image1.src;">
+         <img style="height: 500;" name = "myImage" src = "nyitott.jpg" />
+      </a>
+   </body>
+</html>
